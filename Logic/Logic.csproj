@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Oracle\ApplyOrderDetailLogic.cs" />
+    <Compile Remove="Oracle\DeliveryOrderDetailLogic.cs" />
+    <Compile Remove="Oracle\PP_TriggerDataLoigc.cs" />
+    <Compile Remove="Oracle\StockBakLogic.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{0F5773F4-A0C1-4D17-9354-977B911459BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{6B997F2D-02A1-44EA-869D-268CEC043E13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateGoodsIncrement", "UpdateGoodsIncrement\UpdateGoodsIncrement.csproj", "{5C049A10-8A85-46AC-9615-2822D132CA3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateGoodsInventoryInFull", "UpdateGoodsInventoryInFull\UpdateGoodsInventoryInFull.csproj", "{B7F4BF87-9D01-4DED-9233-252E68B52853}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateGoodsPriceInFull", "UpdateGoodsPriceInFull\UpdateGoodsPriceInFull.csproj", "{A9099438-C2FC-45B7-B447-34C77504F112}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5773F4-A0C1-4D17-9354-977B911459BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5773F4-A0C1-4D17-9354-977B911459BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5773F4-A0C1-4D17-9354-977B911459BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5773F4-A0C1-4D17-9354-977B911459BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B997F2D-02A1-44EA-869D-268CEC043E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B997F2D-02A1-44EA-869D-268CEC043E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B997F2D-02A1-44EA-869D-268CEC043E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B997F2D-02A1-44EA-869D-268CEC043E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C049A10-8A85-46AC-9615-2822D132CA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C049A10-8A85-46AC-9615-2822D132CA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C049A10-8A85-46AC-9615-2822D132CA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C049A10-8A85-46AC-9615-2822D132CA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F4BF87-9D01-4DED-9233-252E68B52853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F4BF87-9D01-4DED-9233-252E68B52853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F4BF87-9D01-4DED-9233-252E68B52853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F4BF87-9D01-4DED-9233-252E68B52853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9099438-C2FC-45B7-B447-34C77504F112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9099438-C2FC-45B7-B447-34C77504F112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9099438-C2FC-45B7-B447-34C77504F112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9099438-C2FC-45B7-B447-34C77504F112}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AD6885F-9B3F-475F-AE03-1B68E1E18DB1}
+	EndGlobalSection
+EndGlobal
