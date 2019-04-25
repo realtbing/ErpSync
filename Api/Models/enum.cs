@@ -12,4 +12,9 @@
         /// </summary>
         Error = 2
     }
+
+    public enum ModelType
+    {
+        List = 1
+    }
 }
