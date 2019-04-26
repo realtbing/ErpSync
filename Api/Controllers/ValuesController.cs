@@ -19,7 +19,7 @@ namespace Api.Controllers
         {
             //var entity = new OrganizeSKU();
             //var dto = Mapper.Map<SKUPriceChangeDTO>(entity);
-            return new string[] { "value1", "value2" };
+            return new string[] { "value12", "value22" };
         }
 
         // GET api/values/5
