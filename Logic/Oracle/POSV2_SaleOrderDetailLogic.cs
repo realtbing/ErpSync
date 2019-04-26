@@ -42,7 +42,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var query = db.POSV2_SaleOrder.Where(expr).Join(db.POSV2_SaleOrderDetail.Where(exprByDetail), o => o.ID, od => od.ORDERID, (o, od) => new POSV2_SaleOrderDetailDTO
+                var query = db.POSV2_SaleOrders.Where(expr).Join(db.POSV2_SaleOrderDetails.Where(exprByDetail), o => o.ID, od => od.ORDERID, (o, od) => new POSV2_SaleOrderDetailDTO
                 {
                     ID = od.ID,
                     STORECODE = od.STORECODE,
@@ -93,7 +93,7 @@ namespace Logic.Oracle
             POSV2_SaleOrderDetail result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.POSV2_SaleOrderDetail.Where(x => x.ID.Equals(Id)).FirstOrDefault();
+                result = db.POSV2_SaleOrderDetails.Where(x => x.ID.Equals(Id)).FirstOrDefault();
             }
             return result;
         }

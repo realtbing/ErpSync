@@ -36,7 +36,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var query = db.OrganizeSKU.Where(expr);
+                var query = db.OrganizeSKUs.Where(expr);
                 totalCount = query.Count();
                 var list = query.OrderByDescending(x => x.ID).Skip(pageIndex * pageSize).Take(pageSize).ToList();
                 skuList = Mapper.Map<List<SKUPriceChangeDTO>>(list);
@@ -50,7 +50,7 @@ namespace Logic.Oracle
             OrganizeSKU result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.OrganizeSKU.Where(x => x.ID == Id).FirstOrDefault();
+                result = db.OrganizeSKUs.Where(x => x.ID == Id).FirstOrDefault();
             }
             return result;
         }
@@ -66,7 +66,7 @@ namespace Logic.Oracle
             OrganizeSKU result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.OrganizeSKU.Where(x => x.ORGANIZE_CODE.Equals(orgCode) && x.SKU_CODE.Equals(skuCode)).FirstOrDefault();
+                result = db.OrganizeSKUs.Where(x => x.ORGANIZE_CODE.Equals(orgCode) && x.SKU_CODE.Equals(skuCode)).FirstOrDefault();
             }
             return result;
         }

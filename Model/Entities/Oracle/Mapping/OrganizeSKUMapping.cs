@@ -70,4 +70,5 @@ namespace Model.Entities.Oracle.Mapping
             builder.Property(x => x.STOCKDIFFPUNISH2).HasColumnType("number(19,2)");
             builder.Property(x => x.RETURNWAY).HasColumnType("number(19)");
         }
+    }
 }

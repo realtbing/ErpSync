@@ -12,4 +12,9 @@
         /// </summary>
         Error = 2
     }
+
+    public enum TypeA
+    {
+        a = 1
+    }
 }

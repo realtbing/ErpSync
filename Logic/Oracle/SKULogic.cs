@@ -16,7 +16,7 @@ namespace Logic.Oracle
             SKU result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKU.Where(x => x.ID == Id).FirstOrDefault();
+                result = db.SKUs.Where(x => x.ID == Id).FirstOrDefault();
             }
             return result;
         }
@@ -31,7 +31,7 @@ namespace Logic.Oracle
             SKU result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKU.Where(x => x.CODE.Equals(code)).FirstOrDefault();
+                result = db.SKUs.Where(x => x.CODE.Equals(code)).FirstOrDefault();
             }
             return result;
         }

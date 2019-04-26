@@ -1,23 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Entities.Oracle
 {
-    [Table("STOCKORDER")]
     public class StockOrder
     {
         /// <summary>
         /// 序号
         /// </summary>
-        [Key]
         public long ID { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string CODE { get; set; }
 
         /// <summary>
@@ -28,8 +22,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string ORGCODE { get; set; }
 
         /// <summary>
@@ -40,8 +32,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string STORAGECODE { get; set; }
 
         /// <summary>
@@ -62,8 +52,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string REFORGCODE { get; set; }
 
         /// <summary>
@@ -74,8 +62,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string REFSTORAGECODE { get; set; }
 
         /// <summary>
@@ -91,8 +77,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string REFORGCODE2 { get; set; }
 
         /// <summary>
@@ -103,20 +87,16 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string REFORDERCODE { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "decimal(24, 6)")]
         public decimal? PLANAMT { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "decimal(24, 6)")]
         public decimal? FACTAMT { get; set; }
 
         /// <summary>
@@ -127,8 +107,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(200)]
         public string DESCRIPTION { get; set; }
 
         /// <summary>
@@ -144,8 +122,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string CREATEBYNAME { get; set; }
 
         /// <summary>
@@ -156,8 +132,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string MODIFYBYNAME { get; set; }
 
         /// <summary>
@@ -178,8 +152,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string AUDITBYNAME { get; set; }
 
         /// <summary>
@@ -195,8 +167,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string APPROVEBYNAME { get; set; }
 
         /// <summary>
@@ -212,8 +182,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string VOUCHINGUSER { get; set; }
 
         /// <summary>
@@ -229,8 +197,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string FINANCECODE { get; set; }
 
         /// <summary>
@@ -241,8 +207,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string CHECKBILLUSER { get; set; }
 
         /// <summary>
@@ -258,8 +222,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(50)]
         public string PURCHASEBYNAME { get; set; }
 
         /// <summary>
@@ -275,8 +237,6 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(100)]
         public string STATEMENTCODE { get; set; }
 
         /// <summary>
@@ -307,14 +267,11 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "nvarchar2")]
-        [StringLength(100)]
         public string RELATIONORDERCODE { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "decimal(24, 6)")]
         public decimal? PASTEDAMT { get; set; }
 
         /// <summary>
@@ -325,14 +282,11 @@ namespace Model.Entities.Oracle
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "varchar2")]
-        [StringLength(100)]
         public string MANUALORDERCODE { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Column(TypeName = "decimal(24, 6)")]
         public decimal? TAXDEDUCTIONAMT { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var query = db.StockOrder.Where(expr).Join(db.StockOrderDetail.Where(exprByDetail), o => o.ID, od => od.ORDERID, (o, od) => new StockOrderDetailDTO
+                var query = db.StockOrders.Where(expr).Join(db.StockOrderDetails.Where(exprByDetail), o => o.ID, od => od.ORDERID, (o, od) => new StockOrderDetailDTO
                 {
                     ID = od.ID,
                     ORDERID = od.ORDERID,
@@ -101,7 +101,7 @@ namespace Logic.Oracle
             StockOrderDetailDTO result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.StockOrder.Where(x => true).Join(db.StockOrderDetail.Where(x => x.ID.Equals(Id)), o => o.ID, od => od.ORDERID, (o, od) => new StockOrderDetailDTO
+                result = db.StockOrders.Where(x => true).Join(db.StockOrderDetails.Where(x => x.ID.Equals(Id)), o => o.ID, od => od.ORDERID, (o, od) => new StockOrderDetailDTO
                 {
                     ID = od.ID,
                     ORDERID = od.ORDERID,

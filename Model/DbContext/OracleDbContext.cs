@@ -24,16 +24,16 @@ namespace Model.DbContext
         //public DbSet<DeliveryOrderDetail> DeliveryOrderDetail { get; set; }
         public DbSet<OrganizeSKU> OrganizeSKUs { get; set; }
         public DbSet<POSV2_SaleOrder> POSV2_SaleOrders { get; set; }
-        public DbSet<POSV2_SaleOrderDetail> POSV2_SaleOrderDetail { get; set; }
+        public DbSet<POSV2_SaleOrderDetail> POSV2_SaleOrderDetails { get; set; }
         //public DbSet<PP_TriggerData> PP_TriggerData { get; set; }
-        public DbSet<PP_TriggerDataBak> PP_TriggerDataBak { get; set; }
-        public DbSet<SKU> SKU { get; set; }
-        public DbSet<SKUTransform> SKUTransform { get; set; }
-        public DbSet<Stock> Stock { get; set; }
+        public DbSet<PP_TriggerDataBak> PP_TriggerDataBaks { get; set; }
+        public DbSet<SKU> SKUs { get; set; }
+        public DbSet<SKUTransform> SKUTransforms { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
         //public DbSet<StockBak> StockBak { get; set; }
-        public DbSet<StockOrder> StockOrder { get; set; }
-        public DbSet<StockOrderDetail> StockOrderDetail { get; set; }
-        public DbSet<StockSnapshot> StockSnapshot { get; set; }
+        public DbSet<StockOrder> StockOrders { get; set; }
+        public DbSet<StockOrderDetail> StockOrderDetails { get; set; }
+        public DbSet<StockSnapshot> StockSnapshots { get; set; }
 
         /// <summary>
         /// OnModelCreating

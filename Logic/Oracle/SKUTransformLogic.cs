@@ -13,7 +13,7 @@ namespace Logic.Oracle
             List<SKUTransform> result = new List<SKUTransform>();
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKUTransform.Where(x=> skuList.Contains(x.MOTHERSKUCODE) || skuList.Contains(x.CHILDSKUCODE)).ToList();
+                result = db.SKUTransforms.Where(x=> skuList.Contains(x.MOTHERSKUCODE) || skuList.Contains(x.CHILDSKUCODE)).ToList();
             }
 
             return result;
@@ -24,7 +24,7 @@ namespace Logic.Oracle
             List<SKUTransform> result = new List<SKUTransform>();
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKUTransform.Where(x => x.MOTHERSKUCODE.Equals(motherSKUCode)).ToList();
+                result = db.SKUTransforms.Where(x => x.MOTHERSKUCODE.Equals(motherSKUCode)).ToList();
             }
 
             return result;
@@ -35,7 +35,7 @@ namespace Logic.Oracle
             List<SKUTransform> result = new List<SKUTransform>();
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKUTransform.Where(x => x.MOTHERSKUCODE.Equals(goodsCode)).ToList();
+                result = db.SKUTransforms.Where(x => x.MOTHERSKUCODE.Equals(goodsCode)).ToList();
             }
 
             return result;
@@ -46,7 +46,7 @@ namespace Logic.Oracle
             List<SKUTransform> result = new List<SKUTransform>();
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKUTransform.Where(x => x.CHILDSKUCODE.Equals(goodsCode)).ToList();
+                result = db.SKUTransforms.Where(x => x.CHILDSKUCODE.Equals(goodsCode)).ToList();
             }
 
             return result;
@@ -62,7 +62,7 @@ namespace Logic.Oracle
             SKUTransform result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.SKUTransform.Where(x => x.ID == Id).FirstOrDefault();
+                result = db.SKUTransforms.Where(x => x.ID == Id).FirstOrDefault();
             }
             return result;
         }

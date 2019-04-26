@@ -26,7 +26,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var query = db.StockSnapshot.Where(expr).GroupBy(x => x.GOODSCODE);
+                var query = db.StockSnapshots.Where(expr).GroupBy(x => x.GOODSCODE);
                 foreach (var item in query)
                 {
                     result.Add(item.OrderByDescending(x => x.BACKUPDATE).FirstOrDefault());
@@ -48,7 +48,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.StockSnapshot.Where(x => x.ORGCODE.Equals(orgCode) && x.GOODSCODE.Equals(skuCode)).OrderByDescending(x => x.BACKUPDATE).FirstOrDefault();
+                result = db.StockSnapshots.Where(x => x.ORGCODE.Equals(orgCode) && x.GOODSCODE.Equals(skuCode)).OrderByDescending(x => x.BACKUPDATE).FirstOrDefault();
             }
 
             return result;

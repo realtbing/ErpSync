@@ -13,12 +13,12 @@ namespace Model.Entities.Oracle.Mapping
             builder.HasKey(x => x.ID);
 
             builder.Property(x => x.CATEGORY_ID).HasColumnType("number(19)");
-            builder.Property(x => x.SHORTNAME).HasColumnType("nvarchar(50)");
-            builder.Property(x => x.NAME).HasColumnType("nvarchar(50)").IsRequired();
-            builder.Property(x => x.WBCODE).HasColumnType("nvarchar(50)");
-            builder.Property(x => x.PYCODE).HasColumnType("nvarchar(50)");
+            builder.Property(x => x.SHORTNAME).HasColumnType("nvarchar2(50)");
+            builder.Property(x => x.NAME).HasColumnType("nvarchar2(50)").IsRequired();
+            builder.Property(x => x.WBCODE).HasColumnType("nvarchar2(50)");
+            builder.Property(x => x.PYCODE).HasColumnType("nvarchar2(50)");
             builder.Property(x => x.BRAND_ID).HasColumnType("number(19)");
-            builder.Property(x => x.MODEL).HasColumnType("nvarchar(50)");
+            builder.Property(x => x.MODEL).HasColumnType("nvarchar2(50)");
             builder.Property(x => x.RANK).HasColumnType("number(19)");
             builder.Property(x => x.PRICETYPE).HasColumnType("number(19)");
             builder.Property(x => x.STATUS).HasColumnType("number(5)").IsRequired();
@@ -29,16 +29,16 @@ namespace Model.Entities.Oracle.Mapping
             builder.Property(x => x.SPEC).HasColumnType("number(38,3)");
             builder.Property(x => x.UNIT).HasColumnType("nvarchar(50)");
             builder.Property(x => x.SALESPEC).HasColumnType("number(38,3)").IsRequired();
-            builder.Property(x => x.SALEUNIT).HasColumnType("nvarchar(50)").IsRequired();
+            builder.Property(x => x.SALEUNIT).HasColumnType("nvarchar2(50)").IsRequired();
             builder.Property(x => x.GROUPID).HasColumnType("number(19)");
             builder.Property(x => x.SUPPLIER_ID).HasColumnType("number(19)");
-            builder.Property(x => x.IMGURL).HasColumnType("nvarchar(200)");
+            builder.Property(x => x.IMGURL).HasColumnType("nvarchar2(200)");
             builder.Property(x => x.PPRICE).HasColumnType("number(0)");
             builder.Property(x => x.SPRICE).HasColumnType("number(0)");
             builder.Property(x => x.MPRICE).HasColumnType("number(0)");
-            builder.Property(x => x.DESCRIPTION).HasColumnType("nvarchar(200)");
+            builder.Property(x => x.DESCRIPTION).HasColumnType("nvarchar2(200)");
             builder.Property(x => x.CREATEON).HasColumnType("date(7)");
-            builder.Property(x => x.CREATEBYID).HasColumnType("nvarchar(50)");
+            builder.Property(x => x.CREATEBYID).HasColumnType("nvarchar2(50)");
         }
     }
 }

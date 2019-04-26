@@ -2,7 +2,6 @@
 
 namespace Model.Entities.Oracle
 {
-    [Table("POSV2_SALEORDERDETAIL")]
     public class POSV2_SaleOrderDetail
     {
         /// <summary>

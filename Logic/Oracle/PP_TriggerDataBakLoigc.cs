@@ -41,7 +41,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                dataList = db.PP_TriggerDataBak.Where(expr).OrderBy(x => x.CreateTime).ToList();
+                dataList = db.PP_TriggerDataBaks.Where(expr).OrderBy(x => x.CreateTime).ToList();
             }
 
             return dataList;
@@ -58,7 +58,7 @@ namespace Logic.Oracle
             bool result = false;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var entity = db.PP_TriggerDataBak.Where(x => x.Id.Equals(dataId)).FirstOrDefault();
+                var entity = db.PP_TriggerDataBaks.Where(x => x.Id.Equals(dataId)).FirstOrDefault();
                 entity.DataStatus = dataStatus;
                 db.Set<PP_TriggerDataBak>().Attach(entity);
                 db.Entry<PP_TriggerDataBak>(entity).State = EntityState.Modified;

@@ -26,7 +26,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                var query = db.Stock.Where(expr);
+                var query = db.Stocks.Where(expr);
                 foreach (var item in query)
                 {
                     result.Add(item);
@@ -48,7 +48,7 @@ namespace Logic.Oracle
 
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.Stock.Where(x => x.ORGCODE.Equals(orgCode) && x.GOODSCODE.Equals(skuCode)).FirstOrDefault();
+                result = db.Stocks.Where(x => x.ORGCODE.Equals(orgCode) && x.GOODSCODE.Equals(skuCode)).FirstOrDefault();
             }
 
             return result;
@@ -64,7 +64,7 @@ namespace Logic.Oracle
             Stock result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
-                result = db.Stock.Where(x => x.ID.Equals(Id)).FirstOrDefault();
+                result = db.Stocks.Where(x => x.ID.Equals(Id)).FirstOrDefault();
             }
             return result;
         }
