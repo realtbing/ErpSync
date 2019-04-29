@@ -28,7 +28,7 @@ namespace Api.Controllers
         {
             if (id > 3)
             {
-                throw new Exception("id big");
+                throw new Exception(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ", error info: id big");
             }
             else
             {
