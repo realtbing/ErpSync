@@ -9,7 +9,7 @@ using Model;
 
 namespace Api.Controllers
 {
-    public class OrganizeSK1UPriceController : ControllerBase
+    public class OrganizeSKUPriceController : ControllerBase
     {
         OrganizeSKULogic organizeSKULogic = new OrganizeSKULogic();
 
