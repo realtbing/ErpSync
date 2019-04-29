@@ -26,7 +26,14 @@ namespace Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value" + id;
+            if (id > 2)
+            {
+                throw new Exception("id big");
+            }
+            else
+            {
+                return "value" + id;
+            }
         }
 
         // POST api/values
