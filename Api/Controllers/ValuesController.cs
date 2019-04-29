@@ -26,7 +26,7 @@ namespace Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            if (id > 2)
+            if (id > 3)
             {
                 throw new Exception("id big");
             }
