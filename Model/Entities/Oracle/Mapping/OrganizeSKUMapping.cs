@@ -7,7 +7,7 @@ namespace Model.Entities.Oracle.Mapping
     {
         public void Configure(EntityTypeBuilder<OrganizeSKU> builder)
         {
-            builder.ToTable("ORGANIZESKUabc");
+            builder.ToTable("ORGANIZESKU");
 
             builder.Property(x => x.ID).HasColumnType("number(19)");
             builder.HasKey(x => x.ID);

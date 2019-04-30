@@ -66,6 +66,15 @@ namespace Logic.Oracle
             OrganizeSKU result = null;
             using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
             {
+                result = db.OrganizeSKUs.Where(x => x.ORGANIZE_CODE.Equals(orgCode) && x.SKU_CODE.Equals(skuCode)).ToList().FirstOrDefault();
+            }
+            return result;
+        }
+        public OrganizeSKU GetSingleByShopAndSKU1(string orgCode, string skuCode)
+        {
+            OrganizeSKU result = null;
+            using (OracleDbContext db = new OracleDbContext(base.oracleBuilder.Options))
+            {
                 result = db.OrganizeSKUs.Where(x => x.ORGANIZE_CODE.Equals(orgCode) && x.SKU_CODE.Equals(skuCode)).FirstOrDefault();
             }
             return result;

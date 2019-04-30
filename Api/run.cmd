@@ -1,5 +1,5 @@
 @echo off
 echo ASPNETCORE_ENVIRONMENT=Development
-dotnet build 
+dotnet build
 start "Api" dotnet run
 exit

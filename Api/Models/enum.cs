@@ -13,8 +13,11 @@
         Error = 2
     }
 
-    public enum TypeA
+    public enum ApiVersions
     {
-        a = 1
+        /// <summary>
+        /// v1
+        /// </summary>
+        v1 = 1
     }
 }

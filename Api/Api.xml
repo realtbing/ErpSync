@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Attribute.CustomRouteAttribute">
+            <summary>
+            自定义路由 /api/{version=v1}/[controler]/[action]
+            </summary>
+        </member>
+        <member name="M:Api.Attribute.CustomRouteAttribute.#ctor(System.String)">
+            <summary>
+            自定义路由构造函数
+            </summary>
+            <param name="actionName"></param>
+        </member>
+        <member name="M:Api.Attribute.CustomRouteAttribute.#ctor(Api.Models.ApiVersions,System.String)">
+            <summary>
+            自定义路由构造函数
+            </summary>
+            <param name="actionName"></param>
+            <param name="version"></param>
+        </member>
+        <member name="P:Api.Attribute.CustomRouteAttribute.GroupName">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.OrganizeSKUPriceController.Get(System.String,System.String)">
+            <summary>
+            获取ERP系统里门店商品的价格
+            </summary>
+            <param name="orgCode">门店Code</param>
+            <param name="skuCode">商品Code</param>
+            <returns>返回价格</returns>
+        </member>
+        <member name="M:Api.Controllers.RealStockController.Get(System.String,System.String)">
+            <summary>
+            获取ERP系统里门店商品的库存(从日结日开始统计销售、报损、退货订单的商品总量)
+            </summary>
+            <param name="orgCode">门店Code</param>
+            <param name="skuCode">商品Code</param>
+            <returns>返回价格</returns>
+        </member>
+        <member name="F:Api.Models.ResultType.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Api.Models.ResultType.Error">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="F:Api.Models.ApiVersions.v1">
+            <summary>
+            v1
+            </summary>
+        </member>
+        <member name="T:Api.Models.ReturnModel`1">
+            <summary>
+            APP接口统一标准模型
+            </summary>
+        </member>
+        <member name="P:Api.Models.ReturnModel`1.Type">
+            <summary>
+            结果类型
+            </summary>
+        </member>
+        <member name="P:Api.Models.ReturnModel`1.Errorcode">
+            <summary>
+            错误编码
+            </summary>
+        </member>
+        <member name="P:Api.Models.ReturnModel`1.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:Api.Models.ReturnModel`1.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="T:Api.Models.ReturnModelPage`1">
+            <summary>
+            APP接口统一标准模型，分页
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Api.Service.ApiTokenService.IApiTokenService">
+            <summary>
+            api接口服务
+            </summary>
+        </member>
+        <member name="M:Api.Service.ApiTokenService.IApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            转换成token
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Service.ApiTokenService.IApiTokenService.GetUserInfoByToken">
+            <summary>
+            根据token解密信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Service.ApiTokenService.ApiTokenConfig">
+            <summary>
+            apiToken_唯一key
+            </summary>
+        </member>
+        <member name="M:Api.Service.ApiTokenService.ConvertLoginToken(System.Int32,System.String)">
+            <summary>
+            换取登录token 
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Service.ApiTokenService.GetUserInfoByToken">
+            <summary>
+            获取登录信息 
+            </summary>
+            <remarks>
+            获取header或者参数携带的token参数
+            </remarks>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

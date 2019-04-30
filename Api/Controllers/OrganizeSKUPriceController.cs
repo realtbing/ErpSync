@@ -9,6 +9,8 @@ using Model;
 
 namespace Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class OrganizeSKUPriceController : ControllerBase
     {
         OrganizeSKULogic organizeSKULogic = new OrganizeSKULogic();
@@ -22,7 +24,7 @@ namespace Api.Controllers
         public Models.ReturnModel<decimal> Get(string orgCode, string skuCode)
         {
             Models.ReturnModel<decimal> result = new Models.ReturnModel<decimal>();
-            var entity = organizeSKULogic.GetSingleByShopAndSKU(orgCode, skuCode);
+            var entity = organizeSKULogic.GetSingleByShopAndSKU1(orgCode, skuCode);
             if (entity == null)
             {
                 result.Type = Models.ResultType.Error;
