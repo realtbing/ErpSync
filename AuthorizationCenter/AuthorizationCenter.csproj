@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="OAuth2\MyClientStore.cs" />
-    <Compile Remove="OAuth2\MyPersistedGrantStore.cs" />
-    <Compile Remove="OAuth2\MyScopeStore.cs" />
+    <Compile Remove="OAuth2\MyScopeStore - 复制.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -101,6 +101,10 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+# NCrunch  
+*.ncrunch*  
+.*crunch*.local.xml 
+
 # JustCode is a .NET coding add-in
 .JustCode
 
@@ -241,6 +245,7 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+*.xap
 
 # Paket dependency manager
 .paket/paket.exe
@@ -259,3 +264,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+#zzzili
+v15/
+.gitignore

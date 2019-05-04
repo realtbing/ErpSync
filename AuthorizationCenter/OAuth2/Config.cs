@@ -40,8 +40,8 @@ namespace AuthorizationCenter
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:11001/" },
-                    PostLogoutRedirectUris = { "http://localhost:11001/" },
+                    RedirectUris = { "http://localhost:11000/" },
+                    PostLogoutRedirectUris = { "http://localhost:11000/" },
 
                     AuthorizationCodeLifetime = 600,
 

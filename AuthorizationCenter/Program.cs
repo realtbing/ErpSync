@@ -19,7 +19,7 @@ namespace AuthorizationCenter
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://192.168.0.128:11000");
+                .UseUrls("http://192.168.0.128:11000")
+                .UseStartup<Startup>();
     }
 }
