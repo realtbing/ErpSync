@@ -26,7 +26,7 @@ namespace AuthorizationCenter
                         {
                             new Secret("secret".Sha256())
                         },
-                        RedirectUris = { "http://192.168.0.128:11000/Home/AuthCode" },
+                        RedirectUris = { "http://localhost:11000/Home/AuthCode" },
                         PostLogoutRedirectUris = { "http://localhost:11000/" },
                         //AccessTokenLifetime = 3600, //AccessToken过期时间， in seconds (defaults to 3600 seconds / 1 hour)
                         //AuthorizationCodeLifetime = 300,  //设置AuthorizationCode的有效时间，in seconds (defaults to 300 seconds / 5 minutes)
