@@ -58,9 +58,10 @@ namespace Api
             //    c.DocumentFilter<ApplyTagDescriptions>();
             //});
 
+            services.AddMvcCore().AddAuthorization().AddJsonFormatters();
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(Options =>
             {
-                Options.Authority = "http://192.168.0.128:11000";
+                Options.Authority = "http://localhost:11000";
                 Options.RequireHttpsMetadata = false;
                 Options.ApiName = "Api";
             });

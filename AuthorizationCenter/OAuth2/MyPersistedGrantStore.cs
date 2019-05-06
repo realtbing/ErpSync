@@ -12,7 +12,6 @@ namespace AuthorizationCenter
         //https://www.bbsmax.com/A/kvJ3raK7zg/
         //https://www.cnblogs.com/skig/p/AspNetCoreAuthCode.html
         //https://www.cnblogs.com/Leo_wl/p/6079515.html
-        //https://blog.csdn.net/weixin_33971205/article/details/86031826
         //https://www.2cto.com/kf/201812/788836.html
         private readonly ConcurrentDictionary<string, PersistedGrant> _repository;
 

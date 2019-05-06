@@ -11,24 +11,27 @@ namespace AuthorizationCenter
         readonly static Dictionary<string, ApiResource> _resources = new Dictionary<string, ApiResource>()
         {
             {
-                "api1",
+                "Api",
                 new ApiResource
                 {
-                    Name = "api1",
-                    DisplayName = "api1",
+                    Name = "Api",
+                    DisplayName = "Api",
                     Description = "My API",
+                    UserClaims = new List<string> {"Role"},
+                    ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
                 }
             }
         };
         readonly static Dictionary<string, IdentityResource> _idResources = new Dictionary<string, IdentityResource>()
         {
             {
-                "api1",
+                "Api",
                 new IdentityResource
                 {
-                    Name = "api1",
-                    DisplayName = "api1",
+                    Name = "Api",
+                    DisplayName = "Api",
                     Description = "My API",
+                    UserClaims = new List<string> {"Role"}
                 }
             }
         };
@@ -42,7 +45,7 @@ namespace AuthorizationCenter
             }
             else
             {
-                return Task.FromResult<ApiResource>(_resources.GetValueOrDefault("api1"));
+                return Task.FromResult<ApiResource>(_resources.GetValueOrDefault("Api"));
             }
 
             //var model = new ApiResource();

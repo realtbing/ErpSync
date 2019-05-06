@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace AuthorizationCenter.Controllers
 {
@@ -10,10 +8,20 @@ namespace AuthorizationCenter.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IOptions<Appsettings.Appsettings> _appSettings;
+
+        public ValuesController(IOptions<Appsettings.Appsettings> settings)
+        {
+            _appSettings = settings;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            //var sign = _appSettings.Value.SigningCredential.Sign;
+            //var str = Convert.FromBase64String(sign);
+            //return str;
             return new string[] { "value1", "value2" };
         }
 
