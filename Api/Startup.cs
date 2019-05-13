@@ -51,24 +51,24 @@ namespace Api
             //services.AddScoped<IApiTokenService, ApiTokenService>();
 
             //https://www.cnblogs.com/morang/p/8325729.html
-            services.AddSwaggerGen(c =>
-            {
-                typeof(ApiVersions).GetEnumNames().ToList().ForEach(version =>
-                {
-                    c.SwaggerDoc(version, new Swashbuckle.AspNetCore.Swagger.Info
-                    {
-                        Version = version,
-                        Title = $"{_Project_Name} 接口文档",
-                        Description = $"{_Project_Name} HTTP API " + version,
-                        TermsOfService = "None"
-                    });
-                });
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, $"{_Project_Name}.xml");
-                c.IncludeXmlComments(xmlPath);
-                //c.OperationFilter<AssignOperationVendorExtensions>();
-                c.DocumentFilter<ApplyTagDescriptions>();
-                c.DescribeAllEnumsAsStrings();
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    typeof(ApiVersions).GetEnumNames().ToList().ForEach(version =>
+            //    {
+            //        c.SwaggerDoc(version, new Swashbuckle.AspNetCore.Swagger.Info
+            //        {
+            //            Version = version,
+            //            Title = $"{_Project_Name} 接口文档",
+            //            Description = $"{_Project_Name} HTTP API " + version,
+            //            TermsOfService = "None"
+            //        });
+            //    });
+            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, $"{_Project_Name}.xml");
+            //    c.IncludeXmlComments(xmlPath);
+            //    //c.OperationFilter<AssignOperationVendorExtensions>();
+            //    c.DocumentFilter<ApplyTagDescriptions>();
+            //    c.DescribeAllEnumsAsStrings();
+            //});
 
             //https://www.jb51.net/article/132815.htm
             services.AddMvcCore()
@@ -106,18 +106,18 @@ namespace Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    //ApiVersions为自定义的版本枚举
-                    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
-                    {
-                        //版本控制
-                        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
-                    });
-                    //注入汉化脚本(3.0后不支持汉化)
-                    //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
-                });
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c =>
+                //{
+                //    //ApiVersions为自定义的版本枚举
+                //    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
+                //    {
+                //        //版本控制
+                //        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
+                //    });
+                //    //注入汉化脚本(3.0后不支持汉化)
+                //    //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
+                //});
             }
             else
             {
@@ -130,19 +130,19 @@ namespace Api
         }
     }
 
-    //添加标签
-    public class ApplyTagDescriptions : IDocumentFilter
-    {
-        public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
-        {
-            swaggerDoc.Tags = new List<Tag>
-            {
-                //添加对应的控制器描述 这个是好不容易在issues里面翻到的
-                new Tag { Name = "OrganizeSKUPrice", Description = "获取SKU售价" },
-                new Tag { Name = "RealStock", Description = "获取SKU真实库存" }
-            };
-        }
-    }
+    ////添加标签
+    //public class ApplyTagDescriptions : IDocumentFilter
+    //{
+    //    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
+    //    {
+    //        swaggerDoc.Tags = new List<Tag>
+    //        {
+    //            //添加对应的控制器描述 这个是好不容易在issues里面翻到的
+    //            new Tag { Name = "OrganizeSKUPrice", Description = "获取SKU售价" },
+    //            new Tag { Name = "RealStock", Description = "获取SKU真实库存" }
+    //        };
+    //    }
+    //}
 
     ////添加通用参数，若in='header'则添加到header中,默认query参数
     //public class AssignOperationVendorExtensions : IOperationFilter
