@@ -25,7 +25,8 @@ namespace Api.Controllers
         /// <param name="openId">用户OpenId</param>
         /// <param name="openGid">群Id</param>
         /// <returns></returns>
-        [HttpGet("openid={openId}&opengid={openGid}")]
+        //[HttpGet("openid={openId}&opengid={openGid}")]
+        [HttpGet]
         public ReturnModel<WC_CrowdDTO> Get(string openId, string openGid)
         {
             ReturnModel<WC_CrowdDTO> result = new ReturnModel<WC_CrowdDTO>();
