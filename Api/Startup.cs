@@ -51,24 +51,24 @@ namespace Api
             //services.AddScoped<IApiTokenService, ApiTokenService>();
 
             //https://www.cnblogs.com/morang/p/8325729.html
-            //services.AddSwaggerGen(c =>
-            //{
-            //    typeof(ApiVersions).GetEnumNames().ToList().ForEach(version =>
-            //    {
-            //        c.SwaggerDoc(version, new Swashbuckle.AspNetCore.Swagger.Info
-            //        {
-            //            Version = version,
-            //            Title = $"{_Project_Name} 接口文档",
-            //            Description = $"{_Project_Name} HTTP API " + version,
-            //            TermsOfService = "None"
-            //        });
-            //    });
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, $"{_Project_Name}.xml");
-            //    c.IncludeXmlComments(xmlPath);
-            //    //c.OperationFilter<AssignOperationVendorExtensions>();
-            //    c.DocumentFilter<ApplyTagDescriptions>();
-            //    c.DescribeAllEnumsAsStrings();
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                typeof(ApiVersions).GetEnumNames().ToList().ForEach(version =>
+                {
+                    c.SwaggerDoc(version, new Swashbuckle.AspNetCore.Swagger.Info
+                    {
+                        Version = version,
+                        Title = $"{_Project_Name} 接口文档",
+                        Description = $"{_Project_Name} HTTP API " + version,
+                        TermsOfService = "None"
+                    });
+                });
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, $"{_Project_Name}.xml");
+                c.IncludeXmlComments(xmlPath);
+                //c.OperationFilter<AssignOperationVendorExtensions>();
+                //c.DocumentFilter<ApplyTagDescriptions>();
+                c.DescribeAllEnumsAsStrings();
+            });
 
             //https://www.jb51.net/article/132815.htm
             services.AddMvcCore()
@@ -106,18 +106,18 @@ namespace Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c =>
-                //{
-                //    //ApiVersions为自定义的版本枚举
-                //    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
-                //    {
-                //        //版本控制
-                //        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
-                //    });
-                //    //注入汉化脚本(3.0后不支持汉化)
-                //    //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
-                //});
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    //ApiVersions为自定义的版本枚举
+                    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
+                    {
+                        //版本控制
+                        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
+                    });
+                    //注入汉化脚本(3.0后不支持汉化)
+                    //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
+                });
             }
             else
             {
