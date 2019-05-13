@@ -27,6 +27,13 @@
             分组名称
             </summary>
         </member>
+        <member name="M:Api.Controllers.LotteryController.Post(Model.ViewModel.LotteryVM)">
+            <summary>
+            抽奖
+            </summary>
+            <param name="model">抽奖视图模型</param>
+            <returns></returns>
+        </member>
         <member name="M:Api.Controllers.OrganizeSKUPriceController.Get(System.String,System.String)">
             <summary>
             获取ERP系统里门店商品的价格
@@ -42,6 +49,14 @@
             <param name="orgCode">门店Code</param>
             <param name="skuCode">商品Code</param>
             <returns>返回价格</returns>
+        </member>
+        <member name="M:Api.Controllers.WC_CrowdController.Get(System.String,System.String)">
+            <summary>
+            群信息
+            </summary>
+            <param name="openId">用户OpenId</param>
+            <param name="openGid">群Id</param>
+            <returns></returns>
         </member>
         <member name="F:Api.Models.ResultType.Success">
             <summary>

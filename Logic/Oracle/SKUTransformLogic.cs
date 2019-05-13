@@ -3,7 +3,6 @@ using System.Linq;
 using Model.DbContext;
 using Model.Entities.Oracle;
 
-
 namespace Logic.Oracle
 {
     public class SKUTransformLogic : BaseLogic

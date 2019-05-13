@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Model.Entities.Oracle;
 using Model.DTO.Oracle;
+using Model.Entities.Oracle;
 
 namespace Model.Profiles.Oracle
 {

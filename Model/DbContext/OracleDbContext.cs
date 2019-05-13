@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Model.Entities.Oracle;
-using Model.Extensions;
 
 namespace Model.DbContext
 {

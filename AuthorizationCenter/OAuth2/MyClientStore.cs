@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
 using IdentityServer4.Stores;
@@ -17,26 +16,30 @@ namespace AuthorizationCenter
             _clients = new Dictionary<string, Client>()
             {
                 {
-                    "client.api",
+                    "product.api.service",
                     new Client
                     {
-                        ClientId = "client.api",
-                        ClientName = "AuthorizationCode Clientid",
-                        AllowedGrantTypes = new string[] { GrantType.AuthorizationCode },
+                        //ClientId = "client",
+                        ClientId = "product.api.service",
+                        //ClientName = "ClientName",
+                        ClientName = "Product Api Service Client",
                         ClientSecrets =
                         {
-                            new Secret("secret".Sha256())
+                            new Secret("productsecret".Sha256())
                         },
-                        RedirectUris = { "http://localhost:11000/Home/AuthCode" },
-                        PostLogoutRedirectUris = { "http://localhost:11000/" },
+                        AllowedGrantTypes = new string[] { GrantType.AuthorizationCode },
+                        //AllowedGrantTypes = new string[] { GrantType.ResourceOwnerPassword, GrantType.ClientCredentials },
+                        //AllowedGrantTypes = new string[] { GrantType.ResourceOwnerPassword, GrantType.ClientCredentials, GrantType.AuthorizationCode },
+
+                        //RedirectUris = { "http://localhost:11000/Home/AuthCode" },
+                        //PostLogoutRedirectUris = { "http://localhost:11000/" },
+
                         AccessTokenLifetime = 3600, //AccessToken过期时间， in seconds (defaults to 3600 seconds / 1 hour)
-                        AuthorizationCodeLifetime = 300,  //设置AuthorizationCode的有效时间，in seconds (defaults to 300 seconds / 5 minutes)
+                        AuthorizationCodeLifetime = 600,  //设置AuthorizationCode的有效时间，in seconds (defaults to 300 seconds / 5 minutes)
                         AbsoluteRefreshTokenLifetime = 2592000,  //RefreshToken的最大过期时间，in seconds. Defaults to 2592000 seconds / 30 day
                         //AllowedScopes = (from l in _apiResource.Scopes select l.Name).ToList(),
-                        AllowedScopes =
-                        {
-                            "Api"
-                        }
+
+                        AllowedScopes = { "clientservice", "productservice" }
                     }
                 }
             };

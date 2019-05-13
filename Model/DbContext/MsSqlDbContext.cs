@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Model.Entities.MsSql;
-using Model.Extensions;
 
 namespace Model.DbContext
 {
@@ -21,6 +20,9 @@ namespace Model.DbContext
         public DbSet<PP_GoodsStockAlerm> PP_GoodsStockAlerms { get; set; }
         public DbSet<PP_Shop> PP_Shops { get; set; }
         public DbSet<PP_ShopGoods> PP_ShopGoodses { get; set; }
+        public DbSet<WC_Crowd> WC_Crowds { get; set; }
+        public DbSet<WC_CrowdLuckDraw> WC_CrowdLuckDraws { get; set; }
+        public DbSet<WC_CrowdUser> WC_CrowdUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

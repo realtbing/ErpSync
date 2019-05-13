@@ -11,27 +11,49 @@ namespace AuthorizationCenter
         readonly static Dictionary<string, ApiResource> _resources = new Dictionary<string, ApiResource>()
         {
             {
-                "Api",
+                "clientservice",
                 new ApiResource
                 {
-                    Name = "Api",
-                    DisplayName = "Api",
-                    Description = "My API",
-                    UserClaims = new List<string> {"Role"},
-                    ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
+                    Name = "clientservice",
+                    DisplayName = "CAS Client Service",
+                    Description = "CAS Client Service",
+                    //UserClaims = new List<string> {"Role"},
+                    //ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
+                }
+            },
+            {
+                "productservice",
+                new ApiResource
+                {
+                    Name = "productservice",
+                    DisplayName = "CAS Product Service",
+                    Description = "CAS Product Service",
+                    //UserClaims = new List<string> {"Role"},
+                    //ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
                 }
             }
         };
         readonly static Dictionary<string, IdentityResource> _idResources = new Dictionary<string, IdentityResource>()
         {
             {
-                "Api",
+                "clientservice",
                 new IdentityResource
                 {
-                    Name = "Api",
-                    DisplayName = "Api",
-                    Description = "My API",
-                    UserClaims = new List<string> {"Role"}
+                    Name = "clientservice",
+                    DisplayName = "CAS Client Service",
+                    Description = "CAS Client Service",
+                    //UserClaims = new List<string> {"Role"},
+                    //ApiSecrets = new List<Secret> {new Secret("scopeSecret".Sha256())},
+                }
+            },
+            {
+                "productservice",
+                new IdentityResource
+                {
+                    Name = "productservice",
+                    DisplayName = "CAS Product Service",
+                    Description = "CAS Product Service",
+                    //UserClaims = new List<string> {"Role"}
                 }
             }
         };

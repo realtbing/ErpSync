@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
-using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using IdentityServer4.Stores;
 using NLog.Extensions.Logging;
 
 namespace AuthorizationCenter
@@ -49,6 +50,7 @@ namespace AuthorizationCenter
                     //.AddInMemoryClients(Config.GetClients())    //将Clients设置到内存中
                     //.AddInMemoryApiResources(Config.GetResources())    //将Scopes设置到内存中
                     //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+                    .AddTestUsers(Config.GetUsers().ToList())
                     ;
         }
 

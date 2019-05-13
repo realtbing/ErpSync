@@ -1,8 +1,7 @@
-﻿
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Model.DbContext;
-using System;
 
 namespace Logic
 {

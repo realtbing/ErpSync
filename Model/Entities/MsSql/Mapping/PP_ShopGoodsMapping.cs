@@ -30,7 +30,7 @@ namespace Model.Entities.MsSql.Mapping
             builder.Property(x => x.isOfflineSKU).HasColumnType("bit");
             builder.Property(x => x.isOfflineSKUPrice).HasColumnType("bit");
             builder.Property(x => x.shelveTime).HasColumnType("datetime");
-            builder.Property(x => x.daysAfterSale).HasColumnType("datetime");
+            builder.Property(x => x.daysAfterSale).HasColumnType("int");
             builder.Property(x => x.createTime).HasColumnType("datetime").IsRequired();
         }
     }

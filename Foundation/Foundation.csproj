@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Redis\RedisConfigurationSection.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSRedisCore" Version="3.0.55" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="ServiceStack.Common" Version="5.5.0" />
+    <PackageReference Include="ServiceStack.Interfaces" Version="5.5.0" />
+    <PackageReference Include="ServiceStack.Redis" Version="5.5.0" />
+    <PackageReference Include="ServiceStack.Text" Version="5.5.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
   </ItemGroup>
 
 </Project>

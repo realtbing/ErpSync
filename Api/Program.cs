@@ -26,7 +26,7 @@ namespace Api
             WebHost.CreateDefaultBuilder(args)
                 .UseConfiguration(config)
                 .UseKestrel()
-                .UseUrls("")
+                //.UseUrls("")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>();

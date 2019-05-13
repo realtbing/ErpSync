@@ -21,6 +21,7 @@ namespace Api.Controllers
         /// <param name="orgCode">门店Code</param>
         /// <param name="skuCode">商品Code</param>
         /// <returns>返回价格</returns>
+        [HttpGet("{orgCode}, {skuCode}")]
         public Models.ReturnModel<decimal> Get(string orgCode, string skuCode)
         {
             Models.ReturnModel<decimal> result = new Models.ReturnModel<decimal>();

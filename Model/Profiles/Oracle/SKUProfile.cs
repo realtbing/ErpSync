@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Model.Entities.Oracle;
 using Model.DTO.Oracle;
 
 namespace Model.Profiles.Oracle
