@@ -125,7 +125,7 @@ namespace Api
             }
 
             ////app.UseAuthentication();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
