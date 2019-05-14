@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DTO\MsSql\WC_CrowdLuckDrawRedisDTO.cs" />
+    <Compile Remove="DTO\MsSql\WC_CrowdRedisDTO.cs" />
     <Compile Remove="DTO\Oracle\ApplyOrderDetailDTO.cs" />
     <Compile Remove="DTO\Oracle\DeliveryOrderDetailDTO.cs" />
     <Compile Remove="DTO\Oracle\SKUStockChangeDTO.cs" />

@@ -3,7 +3,7 @@
     public class WC_CrowdDTO
     {
         /// <summary>
-        /// 名称
+        /// 群名称
         /// </summary>
         public string name { get; set; }
 

@@ -27,11 +27,35 @@
             分组名称
             </summary>
         </member>
+        <member name="M:Api.Controllers.CrowdController.Get(System.String,System.String)">
+            <summary>
+            群信息
+            </summary>
+            <param name="openId">用户OpenId</param>
+            <param name="openGid">群Id</param>
+            <returns></returns>
+        </member>
         <member name="M:Api.Controllers.LotteryController.Post(Model.ViewModel.LotteryVM)">
             <summary>
             抽奖
             </summary>
             <param name="model">抽奖视图模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.LotteryHistoryController.Get(System.DateTime,System.String)">
+            <summary>
+            抽奖历史结果显示
+            </summary>
+            <param name="lotteryDate">抽奖日期</param>
+            <param name="openGid">群Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.LotteryResultController.Get(System.String,System.String)">
+            <summary>
+            抽奖结果显示
+            </summary>
+            <param name="openId">用户OpenId</param>
+            <param name="openGid">群Id</param>
             <returns></returns>
         </member>
         <member name="M:Api.Controllers.OrganizeSKUPriceController.Get(System.String,System.String)">
@@ -49,14 +73,6 @@
             <param name="orgCode">门店Code</param>
             <param name="skuCode">商品Code</param>
             <returns>返回价格</returns>
-        </member>
-        <member name="M:Api.Controllers.WC_CrowdController.Get(System.String,System.String)">
-            <summary>
-            群信息
-            </summary>
-            <param name="openId">用户OpenId</param>
-            <param name="openGid">群Id</param>
-            <returns></returns>
         </member>
         <member name="F:Api.Models.ResultType.Success">
             <summary>

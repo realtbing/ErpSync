@@ -1,30 +1,32 @@
-﻿namespace Model.DTO.MsSql
+﻿using System;
+
+namespace Model.DTO.MsSql
 {
     public class WC_CrowdLuckDrawDTO
     {
         /// <summary>
-        /// 群名称
+        /// 用户昵称
         /// </summary>
-        public int luckDrawTime { get; set; }
+        public string userName { get; set; }
 
         /// <summary>
-        /// 用户手机号码
+        /// 用户头像
         /// </summary>
-        public string userMobile { get; set; }
+        public string headPicture { get; set; }
 
         /// <summary>
-        /// 是否为本人
+        /// 抽奖号码
         /// </summary>
-        public int isSelf { get; set; }
+        public int luckyNumber { get; set; }
 
         /// <summary>
-        /// 抽奖时间
+        /// 中奖标识(1:中奖;2:未中奖)
         /// </summary>
-        public string createTimeSpan { get; set; }
+        public int winning { get; set; }
 
         /// <summary>
-        /// 会员电话
+        /// 抽奖时分
         /// </summary>
-        public string phone { get; set; }
+        public string time { get; set; }
     }
 }

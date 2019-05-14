@@ -2,12 +2,17 @@
 
 namespace Model.DTO.MsSql
 {
-    public class WC_CrowdAndShopDTO : WC_CrowdDTO
+    public class WC_CrowdRedisDTO
     {
         /// <summary>
         /// 群Id
         /// </summary>
-        public string openGId { get; set; }
+        public string openGid { get; set; }
+
+        /// <summary>
+        /// 群名称
+        /// </summary>
+        public string name { get; set; }
 
         /// <summary>
         /// 门店编号
@@ -15,12 +20,17 @@ namespace Model.DTO.MsSql
         public string shopCode { get; set; }
 
         /// <summary>
+        /// 门店名称
+        /// </summary>
+        public string shopName { get; set; }
+
+        /// <summary>
         /// 开始抽奖时间
         /// </summary>
         public DateTime lotteryTime { get; set; }
 
         /// <summary>
-        /// 抽奖时间(分钟)
+        /// 抽奖时间
         /// </summary>
         public int lotteryMinute { get; set; }
 

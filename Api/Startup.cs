@@ -37,6 +37,7 @@ namespace Api
             Mapper.Initialize(cfg =>
             {
                 cfg.AddProfile<WC_CrowdProfile>();
+                cfg.AddProfile<WC_CrowdLuckDrawProfile>();
             });
         }
 
@@ -98,6 +99,8 @@ namespace Api
             services.Configure<Appsetting>(Options =>
             {
                 Options.IsCheckUserAndCrowdRelation = bool.Parse(Configuration["IsCheckUserAndCrowdRelation"]);
+                Options.LotteryMinute = int.Parse(Configuration["LotteryMinute"]);
+                Options.CrowdUserCount = int.Parse(Configuration["CrowdUserCount"]);
             });
         }
 
