@@ -9,6 +9,8 @@
     <Compile Remove="Oracle\DeliveryOrderDetailLogic.cs" />
     <Compile Remove="Oracle\PP_TriggerDataLoigc.cs" />
     <Compile Remove="Oracle\StockBakLogic.cs" />
+    <Compile Remove="Wechat\RandomGenerator.cs" />
+    <Compile Remove="Wechat\SafeXmlDocument.cs" />
   </ItemGroup>
 
   <ItemGroup>

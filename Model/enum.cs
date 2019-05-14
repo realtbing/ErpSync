@@ -311,4 +311,27 @@
         PullOff = 2
     }
     #endregion
+
+    public enum EncryptType
+    {
+        /// <summary>
+        /// 解密用户信息
+        /// </summary>
+        User = 1,
+
+        /// <summary>
+        /// 解密手机信息
+        /// </summary>
+        Mobile = 2,
+
+        /// <summary>
+        /// 解密登录信息
+        /// </summary>
+        Login = 3,
+
+        /// <summary>
+        /// 解密群信息
+        /// </summary>
+        OpenGid = 4
+    }
 }

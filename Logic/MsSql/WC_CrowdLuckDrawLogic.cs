@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Model.Appsettings;
 using Model.DbContext;
@@ -98,8 +99,8 @@ namespace Logic.MsSql
                             return 6;
                         }
 
-                        Random random = new Random();
-                        var lotteryNumberListIndex = random.Next(0, lotteryNumberList.Count);
+                        Random rndNumber = new Random();
+                        var lotteryNumberListIndex = rndNumber.Next(0, lotteryNumberList.Count);
                         lotteryNunber = lotteryNumberList[lotteryNumberListIndex];
                         lotteryNumberList.Remove(lotteryNunber);
 
@@ -118,7 +119,6 @@ namespace Logic.MsSql
                         {
                             lotteryUserList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<WC_CrowdLuckDraw>>(wcGroupLotteryUserList);
                         }
-
                         WC_CrowdLuckDraw entity = new WC_CrowdLuckDraw();
                         entity.shopCode = crowdAndShopDto.shopCode;
                         entity.shopName = crowdAndShopDto.shopName;
@@ -133,13 +133,31 @@ namespace Logic.MsSql
                         entity.date = DateTime.Now.ToString("yyyy-MM-dd");
                         entity.createTime = DateTime.Now;
                         lotteryUserList.Add(entity);
-                        RedisHelper.HSet("LotteryUserList", model.openGid, lotteryUserList);
 
-                        using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+                        if (lotteryUserList.Count == crowdAndShopDto.allowLotteryPepoleNumber)
                         {
-                            db.WC_CrowdLuckDraws.Add(entity);
-                            db.SaveChanges();
+                            List<WC_CrowdLuckDraw> winnerList = new List<WC_CrowdLuckDraw>();
+                            for (var i = 0; i < crowdAndShopDto.allowDrawPepoleNumber; i++)
+                            {
+                                Random rndUser = new Random();
+                                var lotteryUserListIndex = rndUser.Next(0, lotteryUserList.Count);
+                                var winner = lotteryUserList[lotteryUserListIndex];
+                                lotteryUserList.Remove(winner);
+                                winnerList.Add(winner);
+                            }
+                            foreach (var winner in winnerList)
+                            {
+                                winner.winning = 1;
+                                winner.winnerTime = DateTime.Now;
+                                lotteryUserList.Add(winner);
+                            }
+                            using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+                            {
+                                db.WC_CrowdLuckDraws.AddRange(lotteryUserList);
+                                db.SaveChanges();
+                            }
                         }
+                        RedisHelper.HSet("LotteryUserList", model.openGid, lotteryUserList);
                     }).Start();
 
                     return 1;
@@ -197,6 +215,42 @@ namespace Logic.MsSql
                 });
             }
             return result;
+        }
+
+        public void LotteryStatistics()
+        {
+            var list = new List<WC_Crowd>();
+            using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+            {
+                list = db.WC_Crowds.Where(x => x.lotteryTime.HasValue && x.joinPeople > 0 && x.winners > 0 && x.status == 1).ToList();
+            }
+            using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+            {
+                foreach (var temp in list)
+                {
+                    var WC_CrowdLuckDrawEntityList = db.WC_CrowdLuckDraws.Where(x => x.openGid.Equals(temp.openGId) && x.createTime.Date == DateTime.Now.Date).ToList();
+                    if (!WC_CrowdLuckDrawEntityList.Exists(x => x.winning == 1))
+                    {
+                        List<WC_CrowdLuckDraw> winnerList = new List<WC_CrowdLuckDraw>();
+                        for (var i = 0; i < temp.winners; i++)
+                        {
+                            Random rndUser = new Random();
+                            var lotteryUserListIndex = rndUser.Next(0, WC_CrowdLuckDrawEntityList.Count);
+                            var winner = WC_CrowdLuckDrawEntityList[lotteryUserListIndex];
+                            WC_CrowdLuckDrawEntityList.Remove(winner);
+                            winnerList.Add(winner);
+                        }
+                        foreach (var winner in winnerList)
+                        {
+                            winner.winning = 1;
+                            winner.winnerTime = DateTime.Now;
+                            db.Set<WC_CrowdLuckDraw>().Attach(winner);
+                            db.Entry<WC_CrowdLuckDraw>(winner).State = EntityState.Modified;
+                            db.SaveChanges();
+                        }
+                    }
+                }
+            }
         }
     }
 }

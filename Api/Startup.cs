@@ -99,8 +99,18 @@ namespace Api
             services.Configure<Appsetting>(Options =>
             {
                 Options.IsCheckUserAndCrowdRelation = bool.Parse(Configuration["IsCheckUserAndCrowdRelation"]);
+                Options.LotteryTime = Configuration["LotteryTime"];
                 Options.LotteryMinute = int.Parse(Configuration["LotteryMinute"]);
+                Options.AllowLotteryUserCount = int.Parse(Configuration["AllowLotteryUserCount"]);
+                Options.AllowDrawUserCount = int.Parse(Configuration["AllowDrawUserCount"]);
                 Options.CrowdUserCount = int.Parse(Configuration["CrowdUserCount"]);
+
+                #region wechat
+                Options.wechatMchId = Configuration["WeChat:wechatMchId"];
+                //Options.wechatNotifyUrl = Configuration["WeChat:wechatNotifyUrl"];
+                //Options.wechatRefundUrl = Configuration["WeChat:wechatRefundUrl"];
+                Options.wechatCodeToSessionUrl = Configuration["WeChat:wechatCodeToSessionUrl"];
+                #endregion
             });
         }
 

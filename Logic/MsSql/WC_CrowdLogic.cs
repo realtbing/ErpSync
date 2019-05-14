@@ -19,6 +19,30 @@ namespace Logic.MsSql
             _options = options;
         }
 
+        public bool Add(WC_Crowd entity)
+        {
+            bool result = false;
+            using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+            {
+                db.WC_Crowds.Add(entity);
+                if (db.SaveChanges() > 0)
+                {
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+        public WC_Crowd GetSingle(string openGid)
+        {
+            WC_Crowd entity = null;
+            using (MsSqlDbContext db = new MsSqlDbContext(base.mssqlBuilder.Options))
+            {
+                entity = db.WC_Crowds.Where(x=>x.openGId.Equals(openGid)).FirstOrDefault();
+            }
+            return entity;
+        }
+
         public WC_CrowdDTO GetSingle(string openId, string openGid)
         {
             WC_CrowdDTO dto = null;
@@ -99,7 +123,8 @@ namespace Logic.MsSql
                         shopName = s.shopName,
                         lotteryTime = c.lotteryTime.Value,
                         lotteryMinute = _options.Value.LotteryMinute,
-                        allowLotteryPepoleNumber = c.joinPeople
+                        allowLotteryPepoleNumber = c.joinPeople,
+                        allowDrawPepoleNumber = c.winners
                     }).FirstOrDefault();
                 }
                 if (tempDto != null)

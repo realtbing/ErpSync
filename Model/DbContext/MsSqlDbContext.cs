@@ -23,6 +23,8 @@ namespace Model.DbContext
         public DbSet<WC_Crowd> WC_Crowds { get; set; }
         public DbSet<WC_CrowdLuckDraw> WC_CrowdLuckDraws { get; set; }
         public DbSet<WC_CrowdUser> WC_CrowdUsers { get; set; }
+        public DbSet<WC_OfficalAccounts> WC_OfficalAccountses { get; set; }
+        public DbSet<WC_User> WC_Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

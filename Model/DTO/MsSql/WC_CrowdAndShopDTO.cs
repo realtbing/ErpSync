@@ -28,5 +28,10 @@ namespace Model.DTO.MsSql
         /// 允许抽奖人数(0:未开始抽奖)
         /// </summary>
         public int allowLotteryPepoleNumber { get; set; }
+
+        /// <summary>
+        /// 允许中奖人数(0:未开始抽奖)
+        /// </summary>
+        public int allowDrawPepoleNumber { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{8750CE06-5C91-4BB4-B5AB-FBF14822D5E4}"
 EndProject
@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateGoodsPriceInFull", "U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foundation", "Foundation\Foundation.csproj", "{195A0B3A-7518-4C60-9212-42085015E17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationCenter", "AuthorizationCenter\AuthorizationCenter.csproj", "{386BC567-3267-4B9D-BEBF-16393ED4FB0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationCenter", "AuthorizationCenter\AuthorizationCenter.csproj", "{386BC567-3267-4B9D-BEBF-16393ED4FB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryStatistics", "LotteryStatistics\LotteryStatistics.csproj", "{8044F042-17D9-4532-AF0A-AAC61C500954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{386BC567-3267-4B9D-BEBF-16393ED4FB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{386BC567-3267-4B9D-BEBF-16393ED4FB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{386BC567-3267-4B9D-BEBF-16393ED4FB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8044F042-17D9-4532-AF0A-AAC61C500954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8044F042-17D9-4532-AF0A-AAC61C500954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8044F042-17D9-4532-AF0A-AAC61C500954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8044F042-17D9-4532-AF0A-AAC61C500954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

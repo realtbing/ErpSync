@@ -27,10 +27,15 @@
             分组名称
             </summary>
         </member>
-        <member name="M:Api.Controllers.CrowdController.Get(System.String,System.String)">
+        <member name="M:Api.Controllers.CrowdController.Get(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
             <summary>
             群信息
             </summary>
+            <param name="encryptType"></param>
+            <param name="iv">加密算法初始向量</param>
+            <param name="encryptedData">微信加密数据</param>
+            <param name="code">微信登录凭证code</param>
+            <param name="appId">小程序appid</param>
             <param name="openId">用户OpenId</param>
             <param name="openGid">群Id</param>
             <returns></returns>
