@@ -110,25 +110,24 @@ namespace Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    //ApiVersions为自定义的版本枚举
+                    typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
+                    {
+                        //版本控制
+                        c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
+                    });
+                    //注入汉化脚本(3.0后不支持汉化)
+                    //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
+                });
             }
             else
             {
                 app.UseHsts();
             }
-
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                //ApiVersions为自定义的版本枚举
-                typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
-                {
-                    //版本控制
-                    c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{_Project_Name} {version}");
-                });
-                //注入汉化脚本(3.0后不支持汉化)
-                //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
-            });
             ////app.UseAuthentication();
             //app.UseHttpsRedirection();
             app.UseMvc();
